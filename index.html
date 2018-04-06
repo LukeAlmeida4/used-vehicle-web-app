@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="PROG2070Assignment4">
+    <title>PROG2070 Assignment 4</title>
+
+    <!--jQuery mobile style -->
+    <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+    <!--jQuery libraries-->
+    <script src="js/lib/jquery-2.1.4.js"></script>
+    <script src="js/lib/jquery.validate.js"></script>
+    <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400|Orbitron" rel="stylesheet">
+
+    <!--My scripts-->
+    <script src="js/global.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/queries.js"></script>
+    <script src="js/script.js"></script>
+
+    <!--My style-->
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+
+<body>
+    <!--Page 1 home-->
+    <div id="homePage" data-role="page">
+        <header data-role="header" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a class="ui-btn-active ui-state-persist" href="#homePage">Home</a></li>
+                    <li><a href="#newPage">New</a></li>
+                    <li><a href="#searchPage">Search</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <div class="box">
+                <div class="wrapper">
+                    <div class="container">
+                        <h1>Welcome</h1>
+                        <ul data-role="listview" data-inset="true">
+                            <li data-icon="false">
+                                <a href="#newPage">
+                                    <h2>
+                                        NEW VEHICLE
+                                    </h2>
+                                    <p>
+                                        Allows you to enter a used vehicle entry
+                                    </p>
+                                </a>
+                            </li>
+                            <li data-icon="false">
+                                <a href="#searchPage">
+                                    <h2>
+                                        SEARCH VEHICLES
+                                    </h2>
+                                    <p>
+                                        Allows you to view previous entries
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer data-role="footer" data-position="fixed"> Used Vehicle Web App
+        </footer>
+    </div>
+
+    <!-- Page 2 new-->
+    <div id="newPage" data-role="page">
+        <header data-role="header" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#homePage">Home</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" href="#newPage">New</a></li>
+                    <li><a href="#searchPage">Search</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <div class="box">
+                <div class="wrapper">
+                    <form id="frmUsedVehicle" name="frmUsedVehicle">
+                        <div class="grid">
+                            <div>
+                                <h1 class="title">User Details</h1>
+
+                                <input id="txtSellerName" name="txtSellerName" type="text" class="required" placeholder="Seller's Name">
+                                <input id="txtAddress" name="txtAddress" type="text" class="required" placeholder="Address">
+                                <input id="txtCity" name="txtCity" type="text" class="required" placeholder="City">
+                                <input id="txtNumber" name="txtNumber" type="text" class="required" placeholder="Phone Number">
+                                <input id="txtEmail" name="txtEmail" type="email" class="required" placeholder="Email Address">
+
+                            </div>
+
+                            <div>
+                                <h1 class="title">Vehicle Details</h1>
+
+                                <input id="txtMake" name="txtMake" type="text" class="required" placeholder="Vehicle Make">
+                                <input id="txtModel" name="txtModel" type="text" class="required" placeholder="Vehicle Model">
+                                <input id="txtYear" name="txtYear" type="text" class="required" placeholder="Vehicle Year">
+                            </div>
+                        </div>
+
+                        <div class="buttonContainer">
+                            <button type="button" id="btnSubmit" name="btnSubmit" class="btnStyle">Submit</button>
+                            <button type="reset" class="btnStyle">Reset</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <footer data-role="footer" data-position="fixed"> Used Vehicle Web App
+        </footer>
+    </div>
+
+    <!-- Page 3 search-->
+    <div id="searchPage" data-role="page">
+        <header data-role="header" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li><a href="#homePage">Home</a></li>
+                    <li><a href="#newPage">New</a></li>
+                    <li><a class="ui-btn-active ui-state-persist" href="#searchPage">Search</a></li>
+                </ul>
+            </div>
+        </header>
+        <section data-role="content">
+            <div class="box">
+                <div class="wrapper">
+                    <div class="container">
+                        <h1>Previous Entries</h1>
+                    </div>
+
+                    <ul data-role="listview" data-inset="true">
+                        <li>
+                            <div id="output"></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer data-role="footer" data-position="fixed"> Used Vehicle Web App
+        </footer>
+    </div>
+</body>
+
+</html>
